@@ -1,0 +1,14 @@
+
+.heading:nth-child(1){
+    text-align: center;
+}
+
+.books{
+    display: flex;
+    gap: 20px;
+}
+.book{
+    height:500px;
+    width: 500px;
+    background-color: grey;
+}
