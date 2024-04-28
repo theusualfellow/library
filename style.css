@@ -1,7 +1,6 @@
 
 body{
     background-image: url('wooden-background.jpg');
-    height: 100vh;
 }
 .heading:nth-child(1){
     text-align: center;
@@ -25,4 +24,15 @@ body{
 }
 .footer{
     text-align: center; 
+    padding-bottom: 10px;
+}
+.book{
+    padding:20px;
+    border-radius: 10px;
+    background-image: linear-gradient(to left, rgba(160, 107, 9, 0.425), rgb(92, 50, 6));
+
+    opacity: 0.9;
+}
+.book:hover{
+    opacity: 1;
 }
