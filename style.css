@@ -6,6 +6,7 @@
 .books{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .book{
     height:500px;
