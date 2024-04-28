@@ -9,6 +9,7 @@ let bookAuthor= document.querySelector("#author")
 let bookPages=document.querySelector("#pages")
 const books = document.querySelector(".books")
 const form = document.querySelector(".form")
+const closeDialog= document.querySelector(".closeDialog")
 
 //this is to delete the existing book divs that we have in our html
 deleteButton.forEach(button=>{
@@ -16,6 +17,10 @@ deleteButton.forEach(button=>{
         this.parentNode.remove()
 })
 
+})
+closeDialog.addEventListener("click", (e)=>{
+    e.preventDefault()
+    dialogBox.close()
 })
 
 dialogOpen.addEventListener("click", ()=>{
