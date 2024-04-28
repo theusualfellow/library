@@ -10,6 +10,7 @@ let bookPages=document.querySelector("#pages")
 const books = document.querySelector(".books")
 const form = document.querySelector(".form")
 const closeDialog= document.querySelector(".closeDialog")
+const readStatus= document.querySelectorAll(".readStatus")
 
 //this is to delete the existing book divs that we have in our html
 deleteButton.forEach(button=>{
@@ -25,6 +26,18 @@ closeDialog.addEventListener("click", (e)=>{
 
 dialogOpen.addEventListener("click", ()=>{
     dialogBox.showModal()
+})
+
+readStatus.forEach(button=>{
+    button.addEventListener("click", ()=>{
+        if(button.innerText=="Read"){
+            button.innerText="Unread"
+        }
+        else{
+            button.innerText="Read"
+        }
+})
+
 })
 
 //using i to create a counter for the index of new book in the book array
