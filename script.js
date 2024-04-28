@@ -63,7 +63,7 @@ okayButton.addEventListener("click", ()=>{
     del.textContent="Delete"
 
 
-    if(title.textContent=='' || author.textContent=='' || pages.textContent==''){
+    if(title.textContent=='' || author.textContent=='' || pages.textContent==' pages'){
         alert('this is empty')
     }
     else{
