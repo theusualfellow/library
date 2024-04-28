@@ -24,12 +24,7 @@ dialogOpen.addEventListener("click", ()=>{
 //using i to create a counter for the index of new book in the book array
 let i=0
 okayButton.addEventListener("click", ()=>{
-    //when okay button clicked this will create a new div with class of 'book'
-    //and appned that to the books div in our html
-    const newDiv= document.createElement("div")
-    newDiv.classList.add('book')
-    books.appendChild(newDiv)
-
+    
     //declaring variables for headings and buttons for new book
     const title= document.createElement("h1")
     const author= document.createElement("h1")
@@ -43,6 +38,19 @@ okayButton.addEventListener("click", ()=>{
     pages.textContent= bookPages.value
     read.textContent="read"
     del.textContent="delete"
+
+
+    if(title.textContent=='' || author.textContent=='' || pages.textContent==''){
+        alert('this is empty')
+
+    }
+    else{
+
+    //when okay button clicked this will create a new div with class of 'book'
+    //and appned that to the books div in our html
+    const newDiv= document.createElement("div")
+    newDiv.classList.add('book')
+    books.appendChild(newDiv)
 
     //appending the created headings and buttons
     newDiv.appendChild(title)
@@ -65,24 +73,16 @@ okayButton.addEventListener("click", ()=>{
             console.log(myLibrary)
             i-- //because if this is not done then the index of new array items will be not in order
     })})
-    
     i++ //increasing index on subsequent book additions
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value)
     myLibrary.push(newBook)
     console.log(myLibrary)
+    }
+    
+    
+   
 
 })
-
-
-
-
-
-
-
-
-
-
-
 
 function Book(title, author, pages){
     this.title=title
