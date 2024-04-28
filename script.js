@@ -2,6 +2,12 @@ const book = document.querySelector(".book")
 const deleteButton = document.querySelectorAll(".delete")
 const dialogBox = document.querySelector(".dialogBox")
 const dialogOpen= document.querySelector(".dialogOpen")
+const okayButton = document.querySelector(".okay")
+let bookTitle = document.querySelector("#title")
+let bookAuthor= document.querySelector("#author")
+let pages=document.querySelector("#pages")
+
+const books = document.querySelector(".books")
 
 deleteButton.forEach(button=>{
     button.addEventListener("click", function(){
@@ -14,6 +20,11 @@ dialogOpen.addEventListener("click", ()=>{
     dialogBox.showModal()
 })
 
+okayButton.addEventListener("click", ()=>{
+    const newDiv= document.createElement("div")
+newDiv.classList.add('book')
+    books.appendChild(newDiv)
+})
 
 
 
