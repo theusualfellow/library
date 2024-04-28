@@ -8,6 +8,7 @@ let bookTitle = document.querySelector("#title")
 let bookAuthor= document.querySelector("#author")
 let bookPages=document.querySelector("#pages")
 const books = document.querySelector(".books")
+const form = document.querySelector(".form")
 
 //this is to delete the existing book divs that we have in our html
 deleteButton.forEach(button=>{
@@ -79,8 +80,7 @@ okayButton.addEventListener("click", ()=>{
     console.log(myLibrary)
     }
     
-    
-   
+    form.reset() //resets the input fields after a book is added
 
 })
 
