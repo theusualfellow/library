@@ -10,7 +10,7 @@ let bookPages=document.querySelector("#pages")
 const books = document.querySelector(".books")
 const form = document.querySelector(".form")
 const closeDialog= document.querySelector(".closeDialog")
-const readStatus= document.querySelectorAll(".readStatus")
+let readStatus= document.querySelectorAll(".readStatus")
 
 //this is to delete the existing book divs that we have in our html
 deleteButton.forEach(button=>{
@@ -49,19 +49,22 @@ okayButton.addEventListener("click", ()=>{
     const author= document.createElement("h2")
     const pages=document.createElement("h3")
     const read = document.createElement("button")
+    read.classList.add("readStatus")
+    let read1 = document.querySelector("#readStatus")
+    read.innerText=read1.value
+    
     const del = document.createElement("button")
   
     //assigning value to the variables above to match the user input in the form input field
     title.textContent=bookTitle.value
     author.textContent=bookAuthor.value
-    pages.textContent= bookPages.value
-    read.textContent="read"
-    del.textContent="delete"
+    pages.textContent= `${bookPages.value} pages`
+    console.log(read1.value)
+    del.textContent="Delete"
 
 
     if(title.textContent=='' || author.textContent=='' || pages.textContent==''){
         alert('this is empty')
-
     }
     else{
 
@@ -92,6 +95,21 @@ okayButton.addEventListener("click", ()=>{
             console.log(myLibrary)
             i-- //because if this is not done then the index of new array items will be not in order
     })})
+
+    //creating a new readStatus variable as the one before does not include newly created buttons in the added books
+    let readStatus2= document.querySelectorAll(".readStatus")
+    console.log(readStatus2)
+    readStatus2.forEach(button=>{
+        button.addEventListener("click", ()=>{
+            if(button.innerText=="Read"){
+                button.innerText="Unread"
+            }
+            else{
+                button.innerText="Read"
+            }
+    })
+    })
+
     i++ //increasing index on subsequent book additions
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value)
     myLibrary.push(newBook)
@@ -101,6 +119,7 @@ okayButton.addEventListener("click", ()=>{
     form.reset() //resets the input fields after a book is added
 
 })
+
 
 function Book(title, author, pages){
     this.title=title
