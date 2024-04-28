@@ -7,9 +7,18 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .book{
-    height:500px;
-    width: 500px;
+    height:300px;
+    width: 300px;
     background-color: grey;
+}
+.dialogOpen{
+    display: block;
+    margin: 0 auto 50px auto;
+
+}
+.footer{
+    text-align: center;
 }
