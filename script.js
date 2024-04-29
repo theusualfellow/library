@@ -43,13 +43,15 @@ readStatus.forEach(button=>{
 //using i to create a counter for the index of new book in the book array
 let i=0
 okayButton.addEventListener("click", ()=>{
+
+    
     
     //declaring variables for headings and buttons for new book
     const title= document.createElement("h1")
     const author= document.createElement("h2")
     const pages=document.createElement("h3")
     const read = document.createElement("button")
-    read.classList.add("readStatus")
+    read.classList.add("readStatus2")
     let read1 = document.querySelector("#readStatus")
     read.innerText=read1.value
     
@@ -65,7 +67,7 @@ okayButton.addEventListener("click", ()=>{
 
     if(title.textContent=='' || author.textContent=='' || pages.textContent==' pages'){
         alert('please fill all fields')
-        dialogBox.open()
+        dialogBox.open
     }
     else{
 
@@ -98,8 +100,7 @@ okayButton.addEventListener("click", ()=>{
     })})
 
     //creating a new readStatus variable as the one before does not include newly created buttons in the added books
-    let readStatus2= document.querySelectorAll(".readStatus")
-    console.log(readStatus2)
+    let readStatus2= document.querySelectorAll(".readStatus2")
     readStatus2.forEach(button=>{
         button.addEventListener("click", ()=>{
             if(button.innerText=="Read"){
@@ -108,8 +109,9 @@ okayButton.addEventListener("click", ()=>{
             else{
                 button.innerText="Read"
             }
+        })
     })
-    })
+    
 
     i++ //increasing index on subsequent book additions
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value)
