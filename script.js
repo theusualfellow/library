@@ -64,7 +64,8 @@ okayButton.addEventListener("click", ()=>{
 
 
     if(title.textContent=='' || author.textContent=='' || pages.textContent==' pages'){
-        alert('this is empty')
+        alert('please fill all fields')
+        dialogBox.open()
     }
     else{
 
@@ -114,10 +115,10 @@ okayButton.addEventListener("click", ()=>{
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value)
     myLibrary.push(newBook)
     console.log(myLibrary)
-    }
-    
-    form.reset() //resets the input fields after a book is added
+    dialogBox.close()
 
+}
+form.reset() //resets the input fields after a book is added
 })
 
 
