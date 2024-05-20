@@ -123,12 +123,14 @@ okayButton.addEventListener("click", ()=>{
 form.reset() //resets the input fields after a book is added
 })
 
-
-function Book(title, author, pages){
-    this.title=title
-    this.author=author
-    this.pages=pages
+class Book{
+    constructor(title, author, pages){
+        this.title=title
+        this.author=author
+        this.pages=pages
+    }
 }
+   
 
 const myLibrary=[]
 
